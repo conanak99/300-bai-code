@@ -22,7 +22,11 @@ export interface WeekSection {
 }
 
 const P = (num: number, title: string, url: string, difficulty: Difficulty, time: string): Problem => ({
-  num, title, url, difficulty, time,
+  num,
+  title,
+  url,
+  difficulty,
+  time,
 });
 
 export const problems: Problem[] = [
@@ -199,8 +203,7 @@ export const problems: Problem[] = [
 
 export const problemsByNum = new Map(problems.map((p) => [p.num, p]));
 
-const slice = (start: number, end: number) =>
-  problems.filter((p) => p.num >= start && p.num <= end);
+const slice = (start: number, end: number) => problems.filter((p) => p.num >= start && p.num <= end);
 
 export const weeks: WeekSection[] = [
   { heading: "Tuần 1 (Bài 1-58)", slug: "tuan-1", problems: slice(1, 58) },
@@ -217,5 +220,5 @@ export const difficultyCounts = problems.reduce<Record<Difficulty, number>>(
     acc[p.difficulty] = (acc[p.difficulty] ?? 0) + 1;
     return acc;
   },
-  { "Dễ": 0, "Vừa": 0, "Khó": 0 },
+  { Dễ: 0, Vừa: 0, Khó: 0 },
 );

@@ -19,8 +19,7 @@ export const site = {
   ogTitle: "300 Bài Code Thiếu Nhi - Phiên bản Việt hoá Grind 75",
   fbAppId: "1955312427813371",
   bookUrl: "https://book.toidicodedao.com",
-  courseUrl:
-    "https://hoccodeai.com/?utm_source=300baicode&utm_medium=web&utm_campaign=early_bird",
+  courseUrl: "https://hoccodeai.com/?utm_source=300baicode&utm_medium=web&utm_campaign=early_bird",
   youtubeUrl: "https://bit.ly/codedaotube",
   grind75Url: "https://www.techinterviewhandbook.org/grind75",
   umami: {
