@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://300baicode.com/sitemap-index.xml

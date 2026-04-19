@@ -1,0 +1,31 @@
+---
+import { site } from "../data/site";
+---
+
+<header class="relative">
+  <div class="relative bg-white">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="flex justify-between items-center py-6 md:justify-start md:space-x-10"
+      >
+        <div class="flex justify-start lg:w-0 lg:flex-1">
+          <a class="block sm:text-lg" href={`${site.url}/`}>
+            <span
+              class="font-semibold uppercase text-indigo-500 tracking-wide"
+              >{site.name}</span
+            >
+            <div class="text-xs text-gray-700 font-medium">
+              {site.tagline}
+            </div>
+          </a>
+        </div>
+
+        <div class="hidden md:flex items-center justify-end space-x-6">
+          <span class="font-semibold text-indigo-800 uppercase tracking-wide">
+            {site.cta}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

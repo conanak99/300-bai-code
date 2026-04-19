@@ -1,0 +1,82 @@
+---
+import { difficultyCounts } from "../data/problems";
+import { topics } from "../data/topics";
+---
+
+<section
+  class="border border-gray-300 bg-white"
+  aria-labelledby="intro-overview-heading"
+>
+  <h2
+    id="intro-overview-heading"
+    class="text-xl md:text-lg border-b border-gray-300 font-semibold uppercase text-gray-600 px-4 md:px-6 py-4"
+  >
+    Giới thiệu tổng quan
+  </h2>
+  <div class="flex flex-col lg:flex-row">
+    <div
+      class="flex lg:block items-center justify-between grow shrink basis-0 border-b lg:border-b-0 lg:border-r border-gray-300 p-4 lg:p-6 space-x-2 lg:space-x-0 lg:space-y-2"
+    >
+      <div class="space-y-1">
+        <h3 class="text-sm font-semibold text-gray-600 uppercase">
+          Làm mất bao lâu
+        </h3>
+        <p class="hidden md:block text-xs text-gray-500">
+          Tuỳ thuộc vào ngộ tính. <br />Nhanh thì 1 tháng, chậm thì 4 tháng.<br
+          /> Chỉ cần kiên trì là đủ!
+        </p>
+      </div>
+      <div class="flex justify-end md:justify-start space-x-4 md:space-x-8">
+        <span class="text-xs text-right md:text-left">
+          Bà bán đồng nát làm được, ông chạy ba gác làm được. <span
+            class="font-bold">Bạn cũng làm được! 👊</span
+          >
+        </span>
+      </div>
+    </div>
+
+    <div
+      class="flex lg:block items-center justify-between grow shrink basis-0 border-b lg:border-b-0 lg:border-r border-gray-300 p-4 lg:p-6 space-x-2 lg:space-x-0 lg:space-y-2"
+    >
+      <div class="space-y-1">
+        <h3 class="text-sm font-semibold text-gray-600 uppercase">Độ khó</h3>
+        <p class="hidden md:block text-xs text-gray-500">
+          Tổng hợp độ khó của các bài code 🧠
+        </p>
+      </div>
+      <div class="flex justify-end md:justify-start space-x-4 md:space-x-8">
+        <div class="text-sm md:text-sm font-medium">
+          <span class="text-emerald-500">Dễ: {difficultyCounts["Dễ"]}</span>
+        </div>
+        <div class="text-sm md:text-sm font-medium">
+          <span class="text-yellow-500">Vừa: {difficultyCounts["Vừa"]}</span>
+        </div>
+        <div class="text-sm md:text-sm font-medium">
+          <span class="text-red-500">Khó: {difficultyCounts["Khó"]}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grow shrink basis-0 p-4 lg:p-6 space-y-2">
+      <div
+        class="flex lg:block items-center justify-between space-x-2 lg:space-x-0 lg:space-y-2"
+      >
+        <div class="space-y-1">
+          <h3 class="text-sm font-semibold text-gray-600 uppercase">Chủ đề</h3>
+          <p class="hidden md:block text-xs text-gray-500">
+            Các chủ đề trong 300 bài code 📚
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-end md:justify-start pt-1">
+          {
+            topics.map((t) => (
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 ml-1 md:ml-0 md:mr-1 mb-1">
+                {t.name} : {t.count}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

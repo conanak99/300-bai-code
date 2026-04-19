@@ -1,0 +1,122 @@
+---
+import bookCover from "../assets/images/book_cover.png";
+import { site } from "../data/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+}
+
+const {
+  title = site.title,
+  description = site.description,
+  canonical = `${site.url}/`,
+} = Astro.props;
+
+const ogImage = `${site.url}${bookCover.src}`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${site.url}/#website`,
+      url: `${site.url}/`,
+      name: site.name,
+      inLanguage: "vi-VN",
+      description:
+        "Phiên bản Việt hoá của Grind 75 - 300 bài code luyện phỏng vấn lập trình.",
+      publisher: { "@id": `${site.url}/#person` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${site.url}/#person`,
+      name: site.author,
+      url: site.authorUrl,
+      sameAs: [site.youtubeUrl],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${site.url}/#webpage`,
+      url: `${site.url}/`,
+      name: title,
+      isPartOf: { "@id": `${site.url}/#website` },
+      inLanguage: "vi-VN",
+      primaryImageOfPage: ogImage,
+      about: {
+        "@type": "Thing",
+        name: "Luyện thuật toán phỏng vấn lập trình",
+      },
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang={site.lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={site.authorMeta} />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="keywords" content={site.keywords} />
+    <meta name="theme-color" content={site.themeColor} />
+    <link rel="canonical" href={canonical} />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+
+    <meta property="og:title" content={site.ogTitle} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={`${site.url}/`} />
+    <meta property="og:description" content={site.shortDescription} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content={String(bookCover.width)} />
+    <meta property="og:image:height" content={String(bookCover.height)} />
+    <meta property="og:image:alt" content="Bìa sách 300 Bài Code Thiếu Nhi" />
+    <meta property="og:locale" content={site.locale} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={site.ogTitle} />
+    <meta name="twitter:description" content={site.shortDescription} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <meta property="fb:app_id" content={site.fbAppId} />
+
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(jsonLd)}
+    />
+  </head>
+
+  <body class="bg-gray-50">
+    <slot />
+
+    <script
+      is:inline
+      defer
+      src={site.umami.src}
+      data-website-id={site.umami.websiteId}></script>
+
+    <div id="fb-root"></div>
+    <script
+      is:inline
+      async
+      defer
+      crossorigin="anonymous"
+      src={`https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v14.0&appId=${site.fbAppId}&autoLogAppEvents=1`}
+      nonce="VgidbR8D"></script>
+  </body>
+</html>

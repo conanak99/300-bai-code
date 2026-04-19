@@ -1,0 +1,39 @@
+---
+import type { Problem } from "../data/problems";
+
+interface Props {
+  problem: Problem;
+}
+
+const { problem } = Astro.props;
+
+const difficultyClass: Record<Problem["difficulty"], string> = {
+  "Dễ": "text-emerald-500",
+  "Vừa": "text-yellow-500",
+  "Khó": "text-red-500",
+};
+---
+
+<li
+  class="flex items-center text-sm font-medium text-gray-90 px-4 md:px-6 py-4 space-x-6 text-gray-600"
+>
+  <div class="shrink-0 text-xl w-8 text-center">
+    {problem.num}
+  </div>
+  <div class="grow">
+    <div class="space-y-1">
+      <div class="flex items-center space-x-2">
+        <a
+          class="text-indigo-600 text-base hover:underline"
+          href={problem.url}
+          target="_blank"
+          rel="noopener noreferrer">{problem.title}</a
+        >
+      </div>
+    </div>
+    <div class="flex space-x-2">
+      <span class={difficultyClass[problem.difficulty]}>{problem.difficulty}</span
+      ><span class="not-sr-only">·</span><span>{problem.time}</span>
+    </div>
+  </div>
+</li>

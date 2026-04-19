@@ -1,0 +1,42 @@
+---
+import type { WeekSection as Week } from "../data/problems";
+import ProblemItem from "./ProblemItem.astro";
+
+interface Props {
+  week: Week;
+}
+
+const { week } = Astro.props;
+---
+
+<section class="bg-white" aria-labelledby={`${week.slug}-heading`}>
+  {
+    week.inProgress ? (
+      <div
+        class="w-full flex items-center justify-between md:sticky md:top-16 bg-white border border-gray-300 font-semibold text-base md:text-lg text-black px-4 md:px-6 py-4 space-x-6"
+        aria-label={`${week.heading} - đang cập nhật`}
+      >
+        <div class="flex items-center space-x-2 shrink-0 text-rose-700">
+          <h2 id={`${week.slug}-heading`}>{week.heading}</h2>
+        </div>
+      </div>
+    ) : (
+      <>
+        <div
+          class="w-full flex items-center justify-between md:sticky md:top-16 bg-white border border-gray-300 font-semibold text-base md:text-lg text-black px-4 md:px-6 py-4 space-x-6"
+          aria-label={`${week.heading} - danh sách bài`}
+        >
+          <div class="flex items-center space-x-2 shrink-0">
+            <h2 id={`${week.slug}-heading`}>{week.heading}</h2>
+          </div>
+        </div>
+        <ol
+          class="border-x border-b border-gray-300 divide-y divide-gray-300 list-none"
+          role="list"
+        >
+          {week.problems.map((p) => <ProblemItem problem={p} />)}
+        </ol>
+      </>
+    )
+  }
+</section>
