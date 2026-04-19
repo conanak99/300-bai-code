@@ -16,35 +16,87 @@ import image10 from "../assets/images/10.jpg";
 ---
 
 <!doctype html>
-<html lang="vn">
+<html lang="vi">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>300 Bài Code Thiếu Nhi</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>300 Bài Code Thiếu Nhi - Luyện code phỏng vấn FAANG theo Grind 75</title>
     <meta
       name="description"
-      content="300 Bài Code Thiếu Nhi - Code xong có thể vào các công ty lớn như FAANG kiếm lương 9 số - Tham khảo Grind75"
+      content="Luyện 300 bài code thiếu nhi (phiên bản Việt hoá Grind 75) để chuẩn bị phỏng vấn lập trình tại các công ty lớn như FAANG. Lộ trình 1-4 tháng, chia theo tuần, dễ theo dõi."
     />
-    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    <meta
-      name="author"
-      content="Technical Interview Handbook - Parody by Hoàng Phạm"
-    />
+    <meta name="author" content="Tôi Đi Code Dạo (Hoàng Phạm) - Parody of Tech Interview Handbook" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="keywords" content="300 bài code thiếu nhi, grind 75, luyện code phỏng vấn, leetcode tiếng việt, phỏng vấn lập trình, FAANG, thuật toán, toi di code dao" />
+    <meta name="theme-color" content="#4f46e5" />
+    <link rel="canonical" href="https://300baicode.com/" />
+
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
 
-    <meta property="og:title" content="300 Bài Code Thiếu Nhi phiên bản Web" />
+    <meta property="og:title" content="300 Bài Code Thiếu Nhi - Phiên bản Việt hoá Grind 75" />
+    <meta property="og:site_name" content="300 Bài Code Thiếu Nhi" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://300baicode.com" />
+    <meta property="og:url" content="https://300baicode.com/" />
     <meta
       property="og:description"
-      content="300 Bài Code Thiếu Nhi - Code xong có thể vào các công ty lớn như FAANG kiếm lương 9 số - Tham khảo Grind75"
+      content="Luyện 300 bài code thiếu nhi (phiên bản Việt hoá Grind 75) để chuẩn bị phỏng vấn lập trình tại các công ty lớn như FAANG."
     />
-    <meta property="og:image" content={bookCover.src} />
+    <meta property="og:image" content={`https://300baicode.com${bookCover.src}`} />
+    <meta property="og:image:width" content={String(bookCover.width)} />
+    <meta property="og:image:height" content={String(bookCover.height)} />
+    <meta property="og:image:alt" content="Bìa sách 300 Bài Code Thiếu Nhi" />
     <meta property="og:locale" content="vi_VN" />
 
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="300 Bài Code Thiếu Nhi - Phiên bản Việt hoá Grind 75" />
+    <meta name="twitter:description" content="Luyện 300 bài code thiếu nhi để chuẩn bị phỏng vấn lập trình tại các công ty lớn như FAANG." />
+    <meta name="twitter:image" content={`https://300baicode.com${bookCover.src}`} />
+
     <meta property="fb:app_id" content="1955312427813371" />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://300baicode.com/#website",
+            url: "https://300baicode.com/",
+            name: "300 Bài Code Thiếu Nhi",
+            inLanguage: "vi-VN",
+            description:
+              "Phiên bản Việt hoá của Grind 75 - 300 bài code luyện phỏng vấn lập trình.",
+            publisher: { "@id": "https://300baicode.com/#person" },
+          },
+          {
+            "@type": "Person",
+            "@id": "https://300baicode.com/#person",
+            name: "Hoàng Phạm (Tôi Đi Code Dạo)",
+            url: "https://toidicodedao.com",
+            sameAs: ["https://bit.ly/codedaotube"],
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://300baicode.com/#webpage",
+            url: "https://300baicode.com/",
+            name: "300 Bài Code Thiếu Nhi - Luyện code phỏng vấn FAANG theo Grind 75",
+            isPartOf: { "@id": "https://300baicode.com/#website" },
+            inLanguage: "vi-VN",
+            primaryImageOfPage: `https://300baicode.com${bookCover.src}`,
+            about: {
+              "@type": "Thing",
+              name: "Luyện thuật toán phỏng vấn lập trình",
+            },
+          },
+        ],
+      })}
+    />
   </head>
 
   <body class="bg-gray-50">
@@ -96,8 +148,11 @@ import image10 from "../assets/images/10.jpg";
                         class="object-cover w-36 mx-auto"
                         src={image1}
                         width={300}
-                        alt="Bà Hàng xóm"
+                        alt="Bà hàng xóm đi buôn đồng nát đọc 300 bài code thiếu nhi rồi làm lead lập trình"
                         height={400}
+                        loading="eager"
+                        decoding="async"
+                        fetchpriority="high"
                       />
                       <span class="py-5 px-4 sm:px-6 lg:px-8 text-justify">
                         Bà hàng xóm nhà mình đây, trước đi buôn đồng nát, tình
@@ -117,8 +172,10 @@ import image10 from "../assets/images/10.jpg";
                         class="object-cover w-36 mx-auto"
                         src={image2}
                         width={300}
-                        alt="Anh chài lưới"
+                        alt="Anh chài lưới làm được 300 bài code thiếu nhi rồi làm freelancer công ty Mỹ"
                         height={400}
+                        loading="lazy"
+                        decoding="async"
                       />
                       <span class="py-5 px-4 sm:px-6 lg:px-8 text-justify">
                         Quê tôi miền biển, có gia đình cạnh nhà làm nghề chài
@@ -140,8 +197,10 @@ import image10 from "../assets/images/10.jpg";
                         class="object-cover w-36 mx-auto"
                         src={image3}
                         width={300}
-                        alt="Ông tàm 30"
+                        alt="Ông tầm 30 tuổi chuyển ngành làm lập trình viên nhờ 300 bài code thiếu nhi"
                         height={400}
+                        loading="lazy"
+                        decoding="async"
                       />
                       <span class="py-5 px-4 sm:px-6 lg:px-8 text-justify">
                         Gần nhà mình có ông tầm gần 30, bảo làm cà phê, tiêu mệt
@@ -157,8 +216,10 @@ import image10 from "../assets/images/10.jpg";
                         class="object-cover w-36 mx-auto"
                         src={image4}
                         width={300}
-                        alt="Bác họ tui 46"
+                        alt="Bác 46 tuổi chạy ba gác chuyển nghề làm data science"
                         height={400}
+                        loading="lazy"
+                        decoding="async"
                       />
                       <span class="py-5 px-4 sm:px-6 lg:px-8 text-justify">
                         Bác họ tui 46 rồi, chạy ba gác hoài mệt quá đi học lớp
@@ -173,8 +234,10 @@ import image10 from "../assets/images/10.jpg";
                         class="object-cover w-36 mx-auto"
                         src={image5}
                         width={300}
-                        alt="Ông xe ôm"
+                        alt="Ông xe ôm học code, chuyển qua công ty AI lương cao"
                         height={400}
+                        loading="lazy"
+                        decoding="async"
                       />
                       <span class="py-5 px-4 sm:px-6 lg:px-8 text-justify">
                         Ông xe ôm xóm mình sinh năm 82, hôm trước chạy xe lớ ngớ
@@ -190,8 +253,10 @@ import image10 from "../assets/images/10.jpg";
                         class="object-cover w-36 mx-auto"
                         src={image6}
                         width={300}
-                        alt="Bán hủ tiếu"
+                        alt="Người bán hủ tiếu chuyển sang làm blockchain và AI"
                         height={400}
+                        loading="lazy"
+                        decoding="async"
                       />
                       <span class="py-5 px-4 sm:px-6 lg:px-8 text-justify">
                         Giống tôi, trước đẩy xe hủ tiếu ngoài đường vô tình bắt
@@ -210,8 +275,10 @@ import image10 from "../assets/images/10.jpg";
                         class="object-cover w-36 mx-auto"
                         src={image7}
                         width={300}
-                        alt="Fuho sml"
+                        alt="Phụ hồ công trình chuyển sang làm AI, ML sau 3 tháng luyện code"
                         height={400}
+                        loading="lazy"
+                        decoding="async"
                       />
                       <span class="py-5 px-4 sm:px-6 lg:px-8 text-justify">
                         Năm ngoái tui đi fuho sml ngoài công trình.<br />
@@ -226,8 +293,10 @@ import image10 from "../assets/images/10.jpg";
                         class="object-cover w-36 mx-auto"
                         src={image8}
                         width={300}
-                        alt="Ông làm nhà hàng"
+                        alt="Người làm nhà hàng chuyển sang dev full stack"
                         height={400}
+                        loading="lazy"
+                        decoding="async"
                       />
                       <span class="py-5 px-4 sm:px-6 lg:px-8 text-justify">
                         6 tháng trước làm nhà hàng vất vả quá, trong lúc thái
@@ -241,8 +310,10 @@ import image10 from "../assets/images/10.jpg";
                         class="object-cover w-36 mx-auto"
                         src={image9}
                         width={300}
-                        alt="Chú Sale SIM"
+                        alt="Chú bán SIM chuyển sang làm dev cứng FPT"
                         height={400}
+                        loading="lazy"
+                        decoding="async"
                       />
                       <span class="py-5 px-4 sm:px-6 lg:px-8 text-justify">
                         Ông chú tôi làm sales sim số đẹp cho Viettel, đợt rồi
@@ -257,8 +328,10 @@ import image10 from "../assets/images/10.jpg";
                         class="object-cover w-36 mx-auto"
                         src={image10}
                         width={300}
-                        alt="Ông công nhân than đuối"
+                        alt="Công nhân mệt mỏi chuyển sang làm freelancer lập trình tại nhà"
                         height={400}
+                        loading="lazy"
+                        decoding="async"
                       />
                       <span class="py-5 px-4 sm:px-6 lg:px-8 text-justify">
                         Ông già tôi làm công nhân than đuối quá, muốn kiếm việc
@@ -291,13 +364,18 @@ import image10 from "../assets/images/10.jpg";
                 <div class="flex h-full items-center justify-center">
                   <div class="space-y-4">
                     <div class="space-y-2">
-                      <div class="text-3xl font-bold">
-                        300 Bài Code Thiếu Nhi
-                      </div>
-                      <div class="text-gray-500">
-                        Cơ hội đổi đời cho mọi người theo ngành IT. Việc nhẹ
-                        lương cao, thu nhập trăm triệu.
-                      </div>
+                      <h1 class="text-3xl font-bold">
+                        300 Bài Code Thiếu Nhi - Luyện code phỏng vấn FAANG
+                      </h1>
+                      <p class="text-gray-500">
+                        Phiên bản Việt hoá của <a
+                          class="underline font-semibold text-indigo-600"
+                          href="https://www.techinterviewhandbook.org/grind75"
+                          target="_blank"
+                          rel="noopener noreferrer">Grind 75</a
+                        > - 300 bài code luyện thuật toán, chuẩn bị phỏng vấn lập trình
+                        vào các công ty lớn. Lộ trình chia theo tuần, dễ theo dõi.
+                      </p>
                       <p class="text-gray-500">
                         Nếu bạn thấy có ích, hãy ghé mua ebook ủng hộ mình tại <a
                           class="underline font-semibold text-indigo-600"
@@ -5235,7 +5313,7 @@ import image10 from "../assets/images/10.jpg";
                           <div class="bg-white">
                             <button
                               class="w-full flex items-center justify-between md:sticky md:top-16 bg-white border border-gray-300 font-semibold text-base md:text-lg text-black px-4 md:px-6 py-4 space-x-6"
-                              aria-label="Close Tuần 4 section"
+                              aria-label="Tuần 5 section - đang cập nhật"
                               type="button"
                             >
                               <div
@@ -5248,7 +5326,7 @@ import image10 from "../assets/images/10.jpg";
                           <div class="bg-white">
                             <button
                               class="w-full flex items-center justify-between md:sticky md:top-16 bg-white border border-gray-300 font-semibold text-base md:text-lg text-black px-4 md:px-6 py-4 space-x-6"
-                              aria-label="Close Tuần 4 section"
+                              aria-label="Tuần 6 section - đang cập nhật"
                               type="button"
                             >
                               <div
@@ -5261,7 +5339,7 @@ import image10 from "../assets/images/10.jpg";
                           <div class="bg-white">
                             <button
                               class="w-full flex items-center justify-between md:sticky md:top-16 bg-white border border-gray-300 font-semibold text-base md:text-lg text-black px-4 md:px-6 py-4 space-x-6"
-                              aria-label="Close Tuần 4 section"
+                              aria-label="Tuần 7 section - đang cập nhật"
                               type="button"
                             >
                               <div
