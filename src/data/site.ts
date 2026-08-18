@@ -20,6 +20,7 @@ export const site = {
   fbAppId: "1955312427813371",
   bookUrl: "https://book.toidicodedao.com",
   courseUrl: "https://hoccodeai.com/?utm_source=300baicode&utm_medium=web&utm_campaign=early_bird",
+  n8nCourseUrl: "https://hocn8n.ai/?utm_source=300baicode&utm_medium=web&utm_campaign=early_bird",
   youtubeUrl: "https://bit.ly/codedaotube",
   grind75Url: "https://www.techinterviewhandbook.org/grind75",
   umami: {
